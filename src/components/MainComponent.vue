@@ -86,7 +86,7 @@ export default {
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    margin-bottom: 1.438rem;
+    margin: 1.438rem 0;
 
     .blocks,
     .lines {
@@ -133,8 +133,10 @@ export default {
 }
 
 @media screen and (max-width: 800px) {
-  .main_head {
-    margin: 0 1rem;
+  .main {
+    .main_head {
+      margin: 1rem;
+    }
   }
 }
 </style>

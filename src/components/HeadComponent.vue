@@ -1,26 +1,30 @@
 <template>
   <div class="head center">
-    <img class="head_logo" src="@/assets/Group 1.png" alt="logo" />
-    <div class="head_main center">
-      <div class="head_head center">
-        <h2 class="head_title">monblanproject</h2>
-        <button class="head_button">Start on 17-02-2016</button>
-      </div>
-      <div class="head_info center">
-        <p class="info_p">
-          <span>{{ numberWithCommas(posts) }}</span> posts
-        </p>
-        <p class="info_p">
-          <span>{{ numberWithCommas(followers) }}</span> followers
-        </p>
-        <p class="info_p">
-          <span>{{ numberWithCommas(following) }}</span> following
-        </p>
-      </div>
-      <div class="head_picker">
-        <span class="head_date">Date:</span>
-        <Datepicker v-model="from" />
-        <Datepicker v-model="to" />
+    <div class="head_row">
+      <img class="head_logo" src="@/assets/Group 1.png" alt="logo" />
+      <div class="head_main center">
+        <div class="head_head center">
+          <h2 class="head_title">monblanproject</h2>
+          <button class="head_button">Start on 17-02-2016</button>
+        </div>
+        <div class="head_info center">
+          <p class="info_p">
+            <span>{{ numberWithCommas(posts) }}</span> posts
+          </p>
+          <p class="info_p">
+            <span>{{ numberWithCommas(followers) }}</span> followers
+          </p>
+          <p class="info_p">
+            <span>{{ numberWithCommas(following) }}</span> following
+          </p>
+        </div>
+        <div class="head_picker">
+          <span class="head_date">Date</span>
+          <div class="pickers">
+            <Datepicker v-model="from" />
+            <Datepicker v-model="to" />
+          </div>
+        </div>
       </div>
     </div>
     <div class="first"></div>
@@ -57,11 +61,17 @@ export default {
   position: relative;
   background: #ffffffab;
 
-  .head_logo {
-    width: 8.625rem;
-    height: 8.625rem;
-    margin-right: 5.375rem;
-    cursor: pointer;
+  .head_row {
+    display: flex;
+    width: 50%;
+    justify-content: start;
+
+    .head_logo {
+      width: 8.625rem;
+      height: 8.625rem;
+      margin-right: 5.375rem;
+      cursor: pointer;
+    }
   }
 
   .head_main {
@@ -100,13 +110,21 @@ export default {
     }
     .head_picker {
       display: flex;
+      width: 100%;
+      justify-content: space-between;
 
-      div:nth-child(2) {
-        margin-right: 1rem;
+      .pickers {
+        display: flex;
+        flex-direction: row;
+
+        div:nth-child(1) {
+          margin-right: 1rem;
+        }
       }
 
       .head_date {
         font-size: 1rem;
+        margin-right: 0.688rem;
       }
     }
   }
@@ -123,19 +141,39 @@ export default {
   z-index: -1;
 }
 
+@media screen and (max-width: 600px) {
+  .head {
+    .head_row {
+      width: 100%;
+      justify-content: space-around;
+
+      .head_logo {
+        align-self: center;
+        margin-right: 1.375rem;
+      }
+    }
+
+    .head_picker {
+      .pickers {
+        flex-direction: column !important;
+        margin-bottom: 0.5rem;
+
+        div:nth-child(1) {
+          margin-right: 0rem;
+          margin-bottom: 0.5rem;
+        }
+      }
+    }
+  }
+}
+
 @media screen and (max-width: 400px) {
   .head {
     margin: 0 0.5rem;
 
-    .head_logo {
-      margin-right: 0.5rem;
-    }
-
-    .head_main {
-      .head_head {
-        .head_button {
-          height: 100%;
-        }
+    .head_row {
+      .head_logo {
+        margin-right: 0.5rem;
       }
     }
   }

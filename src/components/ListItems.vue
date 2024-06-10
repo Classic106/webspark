@@ -111,8 +111,7 @@ export default {
 
         &.is_row {
           width: 100%;
-          margin-left: 1.875rem;
-          margin-right: 1.875rem;
+          margin: 0 1.875rem;
         }
 
         &:not(.is_row) {
@@ -198,6 +197,12 @@ export default {
       .list_body_item {
         &:not(.is_row) {
           width: 32%;
+        }
+
+        .list_body_info {
+          &.is_row {
+            margin: 0 1rem;
+          }
         }
       }
     }
