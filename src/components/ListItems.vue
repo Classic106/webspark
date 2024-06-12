@@ -201,7 +201,7 @@ export default {
 
         .list_body_info {
           &.is_row {
-            margin: 0 1rem;
+            margin: 1rem;
           }
         }
       }
@@ -249,6 +249,12 @@ export default {
               .likes {
                 margin-right: 0rem;
               }
+            }
+          }
+
+          .info_uploaded {
+            &:not(.is_row) {
+              flex-direction: column !important;
             }
           }
         }

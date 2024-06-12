@@ -31,4 +31,3 @@ body {
   align-items: center;
 }
 </style>
-./pages/FirstPage.vue

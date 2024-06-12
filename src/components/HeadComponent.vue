@@ -169,9 +169,13 @@ export default {
 
 @media screen and (max-width: 400px) {
   .head {
-    margin: 0 0.5rem;
-
     .head_row {
+      .head_main {
+        .head_head {
+          flex-direction: column;
+        }
+      }
+
       .head_logo {
         margin-right: 0.5rem;
       }
